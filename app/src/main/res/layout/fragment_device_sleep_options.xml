@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/title_timeout_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="Sleep"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <RadioGroup
+        android:id="@+id/timeoutRadioGroup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:paddingBottom="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_timeout_tv">
+
+        <CheckedTextView
+            android:id="@+id/timeout15SecondsTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:drawablePadding="12dp"
+            android:drawableStart="@drawable/selector_radio_button"
+            android:gravity="center_vertical"
+            android:paddingEnd="28dp"
+            android:paddingStart="28dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="8dp"
+            android:text="15 seconds"/>
+
+        <CheckedTextView
+            android:id="@+id/timeout30SecondsTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:drawablePadding="12dp"
+            android:drawableStart="@drawable/selector_radio_button"
+            android:paddingBottom="8dp"
+            android:gravity="center_vertical"
+            android:paddingEnd="28dp"
+            android:paddingStart="28dp"
+            android:paddingTop="8dp"
+            android:text="30 seconds"/>
+
+        <CheckedTextView
+            android:id="@+id/timeout1MinuteTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:paddingBottom="8dp"
+            android:drawablePadding="12dp"
+            android:drawableStart="@drawable/selector_radio_button"
+            android:gravity="center_vertical"
+            android:paddingEnd="28dp"
+            android:paddingStart="28dp"
+            android:paddingTop="8dp"
+            android:text="1 minute"/>
+
+        <CheckedTextView
+            android:id="@+id/timeout5MinuteTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:paddingBottom="8dp"
+            android:drawablePadding="12dp"
+            android:drawableStart="@drawable/selector_radio_button"
+            android:gravity="center_vertical"
+            android:paddingEnd="28dp"
+            android:paddingStart="28dp"
+            android:paddingTop="8dp"
+            android:text="5 minutes"/>
+
+        <CheckedTextView
+            android:id="@+id/timeout10MinuteTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:drawablePadding="12dp"
+            android:drawableStart="@drawable/selector_radio_button"
+            android:gravity="center_vertical"
+            android:paddingEnd="28dp"
+            android:paddingStart="28dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="10 minutes"/>
+
+        <CheckedTextView
+            android:id="@+id/timeout30MinuteTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:drawablePadding="12dp"
+            android:drawableStart="@drawable/selector_radio_button"
+            android:gravity="center_vertical"
+            android:paddingBottom="8dp"
+            android:paddingEnd="28dp"
+            android:paddingStart="28dp"
+            android:paddingTop="8dp"
+            android:text="30 minutes"/>
+
+    </RadioGroup>
+
+</android.support.constraint.ConstraintLayout>

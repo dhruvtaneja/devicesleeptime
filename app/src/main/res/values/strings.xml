@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Device Sleep Time</string>
+
+    <string name="label_animator_duration_scale">Animator duration scale</string>
+    <string name="label_change_screen_timeout">Change device sleep time</string>
+    <string name="dialog_title">Animator duration scale</string>
+    <string name="permission_message">This app helps to change the time of inactivity after
+        which the device should sleep. So it requires the permission just to do that.
+        Enable the settings on the next page
+    </string>
+
+    <string-array name="timeouts">
+        <item>15 seconds</item>
+        <item>30 seconds</item>
+        <item>1 minute</item>
+        <item>5 minutes</item>
+        <item>10 minutes</item>
+        <item>30 minutes</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

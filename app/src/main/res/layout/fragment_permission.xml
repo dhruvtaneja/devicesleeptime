@@ -1,0 +1,44 @@
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="PermissionFragment">
+
+    <TextView
+        android:id="@+id/dialog_title_tv"
+        android:text="App Permissions"
+        android:paddingStart="16dp"
+        android:textSize="18sp"
+        android:paddingEnd="16dp"
+        android:paddingTop="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/permission_message_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:gravity="center_vertical"
+        android:text="@string/permission_message"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dialog_title_tv"/>
+
+    <Button
+        android:id="@+id/button_go_to_permission"
+        style="@android:style/Widget.Material.Light.Button.Borderless.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:textAllCaps="false"
+        android:paddingEnd="16dp"
+        android:paddingBottom="16dp"
+        app:layout_constraintRight_toRightOf="@id/permission_message_tv"
+        app:layout_constraintTop_toBottomOf="@id/permission_message_tv"/>
+
+</android.support.constraint.ConstraintLayout>
