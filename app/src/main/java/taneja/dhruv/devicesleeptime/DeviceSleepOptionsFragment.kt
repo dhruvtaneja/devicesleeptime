@@ -61,12 +61,10 @@ class DeviceSleepOptionsFragment : Fragment(), View.OnClickListener {
         textView.isSelected = true
     }
 
-    private fun getSystemTimeout() = Settings.System.getLong(
-            context.contentResolver, Settings.System.SCREEN_OFF_TIMEOUT)
+    private fun getSystemTimeout() = context.getSystemSettingsLong(Settings.System.SCREEN_OFF_TIMEOUT, 15000)
 
     private fun changeTimeoutTo(time: Long, unit: TimeUnit) {
-        Settings.System.putLong(context.contentResolver, Settings.System.SCREEN_OFF_TIMEOUT,
-                unit.toMillis(time))
+        context.updateSystemSettingsLong(Settings.System.SCREEN_OFF_TIMEOUT, unit.toMillis(time))
         activity.finish()
     }
 

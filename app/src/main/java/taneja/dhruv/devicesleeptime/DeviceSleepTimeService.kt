@@ -5,14 +5,14 @@ import android.provider.Settings
 import android.service.quicksettings.TileService
 
 /**
- * Created by dhruvtaneja on 24/12/17.
+ * Tile Service for sleep time settings
  */
 class DeviceSleepTimeService : TileService() {
 
     override fun onStartListening() {
         super.onStartListening()
         if (Settings.System.canWrite(applicationContext)) {
-            val timeout = Settings.System.getLong(contentResolver, Settings.System.SCREEN_OFF_TIMEOUT, 15000)
+            val timeout = getSystemSettingsLong(Settings.System.SCREEN_OFF_TIMEOUT, 15000)
             val index = TimeoutUtils.getTimeoutIndex(timeout)
             updateTile(index)
         }
@@ -23,11 +23,11 @@ class DeviceSleepTimeService : TileService() {
         if (!Settings.System.canWrite(this)) {
             SleepTimeOptionsActivity.startActivity(this)
         } else {
-            val timeout = Settings.System.getLong(contentResolver, Settings.System.SCREEN_OFF_TIMEOUT, 15000)
+            val timeout = getSystemSettingsLong(Settings.System.SCREEN_OFF_TIMEOUT, 15000)
             val index = TimeoutUtils.getTimeoutIndex(timeout)
             val nextIndex = (index + 1) % TimeoutUtils.timeouts.size
-            val updatedTimeout = TimeoutUtils.timeouts.get(nextIndex)
-            Settings.System.putLong(contentResolver, Settings.System.SCREEN_OFF_TIMEOUT, updatedTimeout)
+            val updatedTimeout = TimeoutUtils.timeouts[nextIndex]
+            updateSystemSettingsLong(Settings.System.SCREEN_OFF_TIMEOUT, updatedTimeout)
             updateTile(nextIndex)
         }
     }
