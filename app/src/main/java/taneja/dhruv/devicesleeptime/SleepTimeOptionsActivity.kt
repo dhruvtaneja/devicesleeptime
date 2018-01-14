@@ -11,7 +11,10 @@ import android.support.v4.app.FragmentTransaction
 class SleepTimeOptionsActivity : AppCompatActivity() {
 
     companion object {
+
         val PERMISSION_REQUEST_CODE = 123
+        val PERMISSION_FRAGMENT_TAG = "permission_fragment"
+        val OPTIONS_FRAGMENT_TAG = "options_fragment"
 
         @JvmStatic
         fun startActivity(service: TileService) =
@@ -36,7 +39,7 @@ class SleepTimeOptionsActivity : AppCompatActivity() {
             if (Settings.System.canWrite(applicationContext)) {
                 val handler = Handler()
                 handler.post {
-                    val fragment = supportFragmentManager.findFragmentByTag("permission_fragment")
+                    val fragment = supportFragmentManager.findFragmentByTag(PERMISSION_FRAGMENT_TAG)
                     val ft: FragmentTransaction = supportFragmentManager.beginTransaction()
                     ft.remove(fragment)
                     ft.commit()
@@ -51,14 +54,14 @@ class SleepTimeOptionsActivity : AppCompatActivity() {
     private fun showPermissionFragment() {
         permissionFragment = PermissionFragment.newInstance()
         val ft: FragmentTransaction = supportFragmentManager.beginTransaction()
-        ft.add(R.id.fragment_container, permissionFragment, "permission_fragment")
+        ft.add(R.id.fragment_container, permissionFragment, PERMISSION_FRAGMENT_TAG)
         ft.commit()
     }
 
     private fun showOptionsFragment() {
         val optionsFragment = DeviceSleepOptionsFragment.newInstance()
         val ft: FragmentTransaction = supportFragmentManager.beginTransaction()
-        ft.add(R.id.fragment_container, optionsFragment, "options_fragment")
+        ft.add(R.id.fragment_container, optionsFragment, OPTIONS_FRAGMENT_TAG)
         ft.commit()
     }
 }
