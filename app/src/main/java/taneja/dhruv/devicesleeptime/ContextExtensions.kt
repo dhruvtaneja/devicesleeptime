@@ -8,5 +8,9 @@ import android.provider.Settings
  */
 
 
-fun Context.getSystemSettingsLong(setting : String, default : Long) =
+fun Context.getSystemSettingsLong(setting: String, default: Long) =
         Settings.System.getLong(contentResolver, setting, default)
+
+fun Context.updateSystemSettingsLong(setting: String, value: Long) {
+    Settings.System.putLong(contentResolver, setting, value)
+}
